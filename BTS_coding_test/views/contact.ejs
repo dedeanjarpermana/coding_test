@@ -1,0 +1,65 @@
+<%- include('layout/header') %>
+<%- include('layout/nav') %>
+<div class="pageutama" style="width: 100%;">
+    <h2> Ini adalah halaman contact. Contact for this company through wa, email and instagram. </h1>
+
+      <% if (msg.length !== 0) { %>
+        <div class="alert alert-info" role="alert">
+          <%= msg %> 
+        </div>
+      <% } %>      
+          <form  class="container mt-3" style="width: 30%;" method="post" action="/contact/deletemultiple">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col"> id </th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Postcode</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                    <% kontak.forEach((kontak,i)=> { (i++) %>
+                    <tr>
+                        
+                        <td> <%= kontak.id %></td>
+                        <td> <%= kontak.username %> </td>
+                        <td> <%= kontak.email %> </td>
+                        <td> <%= kontak.phone %> </td>
+                        <td> <%= kontak.country %> </td>
+                        <td> <%= kontak.city %> </td>
+                        <td> <%= kontak.postcode %> </td>
+                        <td> <%= kontak.name %> </td>
+                        <td> <%= kontak.address %> </td>
+                        
+
+                        <td>
+                          <a href="/contact/<%= kontak.name %>" class="btn btn-outline-dark">Details</a> <!--page contact di web -->
+                          
+                      </td>
+                      
+                    </tr>
+                    
+                  
+                </tr>
+            
+        <%}); %> 
+            </tr>
+            <a href="/contact/add" class="btn btn-outline-dark mb-2">Add data</a> <!-- ke page contact/ add (add kontak)-->
+           
+            
+          </form>
+            </tbody>
+          </table>
+    
+</div>
+
+<%- include('layout/footer') %>

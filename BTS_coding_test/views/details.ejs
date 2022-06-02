@@ -1,0 +1,22 @@
+<%- include('layout/header') %>
+<%- include('layout/nav') %>
+
+
+<div class="card bg-1" style="width: 150px height:40px; margin: 10px 0; background-color: black; color:white">
+    <div class="card-body border border-2 shadow">
+      <h3 class="card-title" style="color:white"><%= detailContact.name%></h3> <br>
+      <h3 class="card-subtitle mb-2 text-white"><%= detailContact.email%></h3> <br>
+      
+      <h3 class="card-text" style="color:white"> <%= detailContact.mobile%></h3> <br>
+      <a href="/contact/edit/<%= detailContact.name %>" class="btn btn-outline-light" style= "color: red" > Edit </a>
+      <a href="/contact/delete/<%= detailContact.name %> " class="btn btn-outline-light" style= "color: red" onclick="return confirm('apakah yakin anda akan menghapus data ini?')"> Delete </a>
+      <a href="/contact" class="btn btn-outline-light" style= "color:white">kembali ke Kontak </a>
+      
+    </div>
+</div>
+
+<div class="pageutama" style="width: 100%;">
+
+</div>
+
+

@@ -1,0 +1,133 @@
+*{
+    color: rgb(1, 13, 46);
+    font-family:  -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+    
+}
+.image1{
+  height: 100px;
+  width: 100px;
+  border-radius: 20%;
+  display: inline-flex; 
+}
+.image2{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: inline-flex; 
+    padding: 10px;
+  }
+
+body{
+  	background-color: #eeeef0;
+    margin-left: 10px;  
+    height: auto;
+    margin-bottom: 5px;
+}
+label {
+    float: right;
+    color:whitesmoke;
+    font-size: 20px;
+
+}
+h1{
+ 
+ font-size: 24pt;
+ color: rgb(226, 156, 6);
+ 
+}
+
+
+
+
+.menu {
+    color:coral;
+    height: 100px;
+    width: 1200px;
+    display: flex;
+    background-color: rgb(1, 11, 39);
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+
+.menu ul {
+    color: #23d61d;
+    text-decoration: none;
+    display: inline-flex;
+    font-weight: bold;
+    float: right;
+    padding: 0px;
+    font-size: 20px;
+    float: right;
+}
+.menu ul li{
+    list-style: none;
+    float:right;
+    
+}
+.menu ul li a{
+    text-decoration:none;
+    padding: 5px;
+    color:oldlace;
+    transition: 0.2s;
+ 
+}
+.menu a:hover {
+    color: #f5f5f5; /* membuat agar link bisa berubah warna pada saat kursor di ats text
+} */
+    /* box-shadow: inset 0px 0px 5px #eceff3; */
+    border-bottom: 4px solid rgb(7, 2, 2);
+}
+
+
+.pageutama{
+    height: auto;
+    width: 2500px;
+    background-color:rgb(233, 231, 231);
+    margin: auto;
+}
+
+.footer{
+
+    
+    
+    width: 100%;
+    background-color: rgb(1, 9, 20);
+    color:white;
+    margin-left: 0px;
+    margin-top: auto;
+    
+   
+}
+.pageutama .kotak p{
+    color:whitesmoke;
+}
+
+
+
+.pageutama .kotak {
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: rgb(0, 12, 26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .row{
+    display:  flex;
+    /* justify-content: center; */
+    flex-direction: row;
+
+}
+
+.bg-1 {
+    background: url(/public/images/batik.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
