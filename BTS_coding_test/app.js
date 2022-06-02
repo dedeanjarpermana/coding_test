@@ -41,7 +41,7 @@ app.get('/about', async (req, res) => {
           title: 'about',
           kontak
       })
-  // console.log(kontak.username)
+  console.log(kontak.username)
   }catch (err) {
       console.error(err.message)
   }
@@ -57,7 +57,7 @@ app.get("/contact", async (req, res) => {
           msg: req.flash('msg')
           
       })
-    // console.log(kontak.username)
+    console.log(kontak.username)
 
   }
   catch (error){
@@ -117,10 +117,10 @@ app.post('/contact',
 
 //  memangggil detail view list dari database (assincronus )
 // route ini tidak boleh disimpan di atas
-app.get("/contact/:name", async (req, res) => {
+app.get("/contact/:id", async (req, res) => {
   try {
     const name = (req.params.name)
-    const {rows : kontak }  = await pool.query(`select * from contacts where name = '${name}'`)
+    const {rows : kontak }  = await pool.query(`select * from user where id = '${id}'`)
     kontak.map(
       detailContact => 
       res.render('details', {
@@ -160,37 +160,20 @@ app.post('/contact/update', [
       })
   }
   else {
-      const{name, email, mobile} = req.body
-      await pool.query(`UPDATE contacts SET name = '${name}', mobile = '${mobile}', email = '${email}' where name = '${req.body.oldName}' `)
+      const{username, password, email, phone, country, city, postcode, name, address} = req.body
+
+      await pool.query(`UPDATE user SET name = '${username}','${password}','${email}', '${phone}', '${country}', '${city}', '${postcode}', '${name}', '${address}' where name = '${req.body.oldName}' `)
       req.flash('msg', 'Data contact berhasil di Update')
       res.redirect('/contact')
   }
 })
 
 
-// Untuk route Edit Contact by Name
-app.get('/contact/edit/:name', async (req, res) => {
-  try{
-      const name = (req.params.name)
-      const {rows : contact} = await pool.query(`SELECT name, email, mobile FROM contacts WHERE name = '${name}'`)
-      contact.map(contactEdit => {
-          res.render('edit', {
-              title : "Page Contact Detail",
-              contactEdit
-          })
-      })
-  }
-  catch (err) {
-      console.error(err.message)
-  }
-  
-})
-
 
 // Route Contact Delete By Name
-app.get('/contact/delete/:name', async (req, res) => {
+app.get('/contact/delete/:id', async (req, res) => {
   try {
-      const deleteContact = await pool.query(`DELETE FROM contacts WHERE name = '${req.params.name}'`)
+      const deleteContact = await pool.query(`DELETE FROM user WHERE id = '${req.params.id}'`)
       if(!deleteContact) {
           req.flash('msg', 'Data contact gagal di hapus')
           res.redirect('/contact')

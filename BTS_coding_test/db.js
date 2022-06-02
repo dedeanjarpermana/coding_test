@@ -39,7 +39,7 @@ const addContact = async (req, res) => {
         
 const delContact =  async (req, res) => {
     try {
-        const {rows: del_contacts_query} = await pool.query(`DELETE FROM contacts WHERE name = '${req.params.name}'`)
+        const {rows: del_contacts_query} = await pool.query(`DELETE user WHERE id = '${req.params.id}'`)
         
     }
     catch (error)
